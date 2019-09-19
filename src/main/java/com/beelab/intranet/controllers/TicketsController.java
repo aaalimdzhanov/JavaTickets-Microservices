@@ -25,13 +25,24 @@ public class TicketsController {
                         return Response.error(ex);
                 }
         }
-        @GetMapping("getTicketById/")
+        @GetMapping("/getTicketById")
         public ResponseEntity<?> getTicketById(@RequestParam(name = "id") long id) {
                 try {
                         return Response.result(ticketRepository.findById(id));
                 }catch (Exception ex){
                         return Response.error(ex);
                 }
+        }
+
+        @GetMapping("/getNumberOfIncByUserId")
+        public ResponseEntity<?> getNumberOfIncByUserId(@RequestParam(name = "id") long id,
+                                                        @RequestParam(name = "type") String type){
+            String status = "New";
+            try {
+                return Response.result(ticketRepository.findAllByCreatorUidAndTypeAndStatus(id,type,status).size());
+            }catch (Exception ex){
+                return Response.error(ex);
+            }
         }
 
 }

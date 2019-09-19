@@ -17,7 +17,7 @@ public class TicketModel {
     @Id
     @SequenceGenerator(name = "TICKETS_SEQUNCE", sequenceName = "TICKETS_SEQ", allocationSize = 1, initialValue = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TICKETS_SEQUNCE")
-    private Integer ID;
+    private Long ID;
     @Column(name = "TYPE")
 
     private String type;
@@ -52,9 +52,9 @@ public class TicketModel {
     @Column(name = "FROZEN_DT")
     private String frozenDt;
     @Column(name = "RESPONSIBLE_UID")
-    private Integer responsibleUid;
+    private Long responsibleUid;
     @Column(name = "CREATOR_UID")
-    private Integer creatorUid;
+    private Long creatorUid;
     @Column(name = "CONTACT_INFO")
     private String contactInfo;
     @Column(name = "CONTACT_EMAIL")
@@ -71,11 +71,11 @@ public class TicketModel {
         this.systemList = system;
     }
 
-    public Integer getID() {
+    public Long getID() {
         return ID;
     }
 
-    public void setID(Integer ID) {
+    public void setID(Long ID) {
         this.ID = ID;
     }
 
@@ -167,19 +167,19 @@ public class TicketModel {
         this.frozenDt = frozenDt;
     }
 
-    public Integer getResponsibleUid() {
+    public Long getResponsibleUid() {
         return responsibleUid;
     }
 
-    public void setResponsibleUid(Integer responsibleUid) {
+    public void setResponsibleUid(Long responsibleUid) {
         this.responsibleUid = responsibleUid;
     }
 
-    public Integer getCreatorUid() {
+    public Long getCreatorUid() {
         return creatorUid;
     }
 
-    public void setCreatorUid(Integer creatorUid) {
+    public void setCreatorUid(Long creatorUid) {
         this.creatorUid = creatorUid;
     }
 
